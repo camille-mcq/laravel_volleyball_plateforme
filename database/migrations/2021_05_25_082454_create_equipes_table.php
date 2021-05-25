@@ -15,17 +15,25 @@ class CreateEquipesTable extends Migration
     {
         Schema::create('equipes', function (Blueprint $table) {
             $table->id();
+            $table->string("nom", 255);
+            $table->string("ville", 255);
+            $table->string("pays", 255);
+            $table->string("max",11);
+            $table->foreignId("continent_id")->constrained("continents");
             $table->timestamps();
         });
     }
 
+    
     /**
      * Reverse the migrations.
      *
      * @return void
      */
+
     public function down()
     {
         Schema::dropIfExists('equipes');
+        
     }
 }

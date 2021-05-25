@@ -13,5 +13,5 @@ class Joueur extends Model
     protected $fillable = ["nom", "prenom", "age", "telephone", "email", "genre", "pays", "role_id", "equipe_id", "photo_id",
  ];
 
-    
+    //un nom , prénom,age, téléphone,email, un genre, un pays d'origine, rôle_id dans une partie ( avant, central, arrière, remplaçant ), une equipe_id et une photo_id
 }
