@@ -14,7 +14,7 @@ class JoueurController extends Controller
      */
     public function index()
     {
-        //
+        return view("bakcoffice.joueur.all");
     }
 
     /**
@@ -24,7 +24,7 @@ class JoueurController extends Controller
      */
     public function create()
     {
-        //
+        return view("backoffice.joueur.create");
     }
 
     /**
@@ -35,7 +35,19 @@ class JoueurController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $joueur = new Joueur();
+
+        $joueur->nom = $request->nom;
+        $joueur->prenom = $request->prenom;
+        $joueur->numero = $request->numero;
+        $joueur->pays = $request->pays;
+        $joueur->photo_id = $request->photo_id;
+        $joueur->role_id = $request->role_id;
+        $joueur->equipe_id = $request->equipe_id;
+
+        $joueur->save();
+
+        return redirect()->route("joueurs.index");
     }
 
     /**
@@ -46,7 +58,7 @@ class JoueurController extends Controller
      */
     public function show(Joueur $joueur)
     {
-        //
+        return view("backoffice.joueur.show");
     }
 
     /**
@@ -57,7 +69,7 @@ class JoueurController extends Controller
      */
     public function edit(Joueur $joueur)
     {
-        //
+        return view("backoffice.joueur.edit");
     }
 
     /**
@@ -69,7 +81,17 @@ class JoueurController extends Controller
      */
     public function update(Request $request, Joueur $joueur)
     {
-        //
+        $joueur->nom = $request->nom;
+        $joueur->prenom = $request->prenom;
+        $joueur->numero = $request->numero;
+        $joueur->pays = $request->pays;
+        $joueur->photo_id = $request->photo_id;
+        $joueur->role_id = $request->role_id;
+        $joueur->equipe_id = $request->equipe_id;
+
+        $joueur->save();
+
+        return redirect()->route("joueurs.index");
     }
 
     /**
@@ -80,6 +102,7 @@ class JoueurController extends Controller
      */
     public function destroy(Joueur $joueur)
     {
-        //
+        $joueur->delete();
+        return redirect()->back(); 
     }
 }

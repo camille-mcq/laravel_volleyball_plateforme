@@ -14,7 +14,8 @@ class EquipeController extends Controller
      */
     public function index()
     {
-        //
+        $equipes = Equipe::all();
+        return view("backoffice.equipe.all");
     }
 
     /**
@@ -24,7 +25,7 @@ class EquipeController extends Controller
      */
     public function create()
     {
-        //
+        return view("backoffice.equipe.create");
     }
 
     /**
@@ -35,7 +36,21 @@ class EquipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $equipe = new Equipe();
+
+        $equipe->nom = $request->nom;
+        $equipe->ville = $request->ville;
+        $equipe->pays = $request->pays;
+        $equipe->max = $request->max;
+        $equipe->ATT = $request->ATT;
+        $equipe->CT = $request->CT;
+        $equipe->DC = $request->DC;
+        $equipe->RP = $request->RP;
+        $equipe->continent_id = $request->continent_id;
+
+        $equipe->save();
+
+        return redirect()->route("equipes.index");
     }
 
     /**
@@ -46,7 +61,7 @@ class EquipeController extends Controller
      */
     public function show(Equipe $equipe)
     {
-        //
+        return view("backoffice.equipe.show", compact("equipe"));
     }
 
     /**
@@ -57,7 +72,7 @@ class EquipeController extends Controller
      */
     public function edit(Equipe $equipe)
     {
-        //
+        return view("backoffice.equipe.edit", compact("equipe"));
     }
 
     /**
@@ -69,7 +84,19 @@ class EquipeController extends Controller
      */
     public function update(Request $request, Equipe $equipe)
     {
-        //
+        $equipe->nom = $request->nom;
+        $equipe->ville = $request->ville;
+        $equipe->pays = $request->pays;
+        $equipe->max = $request->max;
+        $equipe->ATT = $request->ATT;
+        $equipe->CT = $request->CT;
+        $equipe->DC = $request->DC;
+        $equipe->RP = $request->RP;
+        $equipe->continent_id = $request->continent_id;
+
+        $equipe->save();
+
+        return redirect()->route("equipes.index");
     }
 
     /**
@@ -80,6 +107,7 @@ class EquipeController extends Controller
      */
     public function destroy(Equipe $equipe)
     {
-        //
+        $equipe->delete();
+        return redirect()->back();
     }
 }
