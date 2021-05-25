@@ -10833,3 +10833,47 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+@font-face {
+  font-family: "Pattaya";
+  src: url(/fonts/Pattaya-Regular.ttf?025b3946074d659e4e280abf95ec77f4);
+}
+body {
+  min-height: 100vh;
+}
+
+h1, .h1 {
+  font-family: "Pattaya";
+  font-size: 3rem;
+  color: #3490dc;
+}
+
+.home {
+  font-family: "Pattaya";
+  font-size: 2rem;
+  color: #3490dc;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.nav a {
+  color: #6574cd;
+}
+
+.nav-item {
+  padding: 15px;
+}
+
+.nav {
+  width: 20%;
+  padding-top: 30px;
+  border-right: solid 1px grey;
+  min-height: 100vh;
+}
+
+.main {
+  width: 80%;
+}
+
+.welcome {
+  min-height: 100vh;
+}
