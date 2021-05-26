@@ -15,7 +15,7 @@ class EquipeController extends Controller
     public function index()
     {
         $equipes = Equipe::all();
-        return view("backoffice.equipe.all");
+        return view("backoffice.equipe.all", compact("equipes"));
     }
 
     /**
