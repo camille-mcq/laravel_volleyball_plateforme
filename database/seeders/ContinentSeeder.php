@@ -31,7 +31,7 @@ class ContinentSeeder extends Seeder
                 "nom"=>"Espagne"    
             ]);
         DB::table("continents")->insert([
-                "nom"=>"Portugal"    
+                "nom"=>"USA"    
             ]);
         DB::table("continents")->insert([
                 "nom"=>"Angleterre"    
