@@ -10,5 +10,13 @@ class Photo extends Model
     use HasFactory;
     protected $table = "photos";
 
-    protected $fillable = ["nom"];
+    protected $fillable = [
+        "nom",
+        "joueur_id"
+    ];
+
+    public function joueur()
+    {
+        return $this->belongsTo(Joueur::class);
+    }
 }

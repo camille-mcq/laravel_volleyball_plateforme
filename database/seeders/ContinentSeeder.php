@@ -14,7 +14,9 @@ class ContinentSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table("continents")->insert([
+            "nom" => "sans continent"
+        ]);
         DB::table("continents")->insert([
                 "nom"=>"Amérique du Nord"    
             ]);

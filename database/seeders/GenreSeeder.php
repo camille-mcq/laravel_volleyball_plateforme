@@ -14,12 +14,11 @@ class GenreSeeder extends Seeder
      */
     public function run()
     {
-        //
         DB::table("genres")->insert([
-            "nom"=>"Femme"    
+            "nom" => "Homme"
         ]);
         DB::table("genres")->insert([
-            "nom"=>"Homme"    
+            "nom" => "Femme"
         ]);
     }
 }

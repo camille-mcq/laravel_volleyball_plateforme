@@ -15,30 +15,33 @@ class EquipeSeeder extends Seeder
     public function run()
     {
         //
-
+        DB::table("equipes")->insert([
+            "nom" => "sans equipe",
+            "ville" => "",
+            "pays" => "",
+            "max" => "",
+            "continent_id" => 1
+        ]);
         DB::table("equipes")->insert([
             "nom"=>"United",
             "ville"=> "New-York",
             "pays"=>"USA",
             "max"=>12,
-            "role_id"=>1,
-            "continent_id"=>1,
+            "continent_id"=>2,
         ]);
         DB::table("equipes")->insert([
             "nom"=>"Lions",
             "ville"=> "Paris",
             "pays"=>"france",
-            "max"=>23,
-            "role_id"=>3,
-            "continent_id"=>3,
+            "max"=>11,
+            "continent_id"=>4,
         ]);
         
         DB::table("equipes")->insert([
             "nom"=>"Griffondor",
             "ville"=> "Pekin",
             "pays"=>"Chine",
-            "max"=>34,
-            "role_id"=>2,
+            "max"=>14,
             "continent_id"=>4,
         ]);
         DB::table("equipes")->insert([
@@ -46,8 +49,7 @@ class EquipeSeeder extends Seeder
             "ville"=> "Rio",
             "pays"=>"Brazil",
             "max"=>13,
-            "role_id"=>3,
-            "continent_id"=>2,
+            "continent_id"=>3,
         ]);
         
         

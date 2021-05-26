@@ -23,7 +23,7 @@ class JoueurSeeder extends Seeder
             "pays"=>"allemagne",
             "genre_id"=>1,
             "role_id"=>2,
-            "equipe_id"=>2,
+            "equipe_id"=>1
             
         ]);
         DB::table("joueurs")->insert([
@@ -34,8 +34,7 @@ class JoueurSeeder extends Seeder
             "pays"=>"france",
             "genre_id"=>2,
             "role_id"=>4,
-            "equipe_id"=>2,
-            
+            "equipe_id"=>2,            
         ]);
         DB::table("joueurs")->insert([
             "nom"=>"Philippe",
@@ -56,7 +55,7 @@ class JoueurSeeder extends Seeder
             "pays"=>"USA",
             "genre_id"=>2,
             "role_id"=>1,
-            "equipe_id"=>2,
+            "equipe_id"=>1
         ]);
         DB::table("joueurs")->insert([
             "nom"=>"Fz",

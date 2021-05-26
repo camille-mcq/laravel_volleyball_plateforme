@@ -1,37 +1,11 @@
-<header>
-  <nav>
-    <ul class="nav flex-column h-100">
+<ul class="nav flex-column h-100">
     <li class="nav-item">
-      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link active home" aria-current="page" href="{{ route("home") }}">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active home" aria-current="page" href="#">Les équipes</a>
+      <a class="nav-link" href="{{ route("equipes.index") }}">Equipes</a>
     </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Equipes incomplètes</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#">Joueurs sans équipe</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#">Joueurs avec équipe</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#">Equipes Europe</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Equipes hors Europe</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#">Joueuse(femmes) avec équipe</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="#">Joueur(hommes) avec équipe</a>
-      </li>
-      {{-- Welcome to the backoffice avec equipe et joueur --}}
-      <li class="nav-item">
-        <a class="nav-link" href="#">backoffice</a>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route("joueurs.index") }}">Joueurs</a>
     </li>
-    </ul>
-  </nav>
-</header>
+</ul>
