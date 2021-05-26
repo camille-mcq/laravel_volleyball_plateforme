@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Continent;
 use App\Models\Joueur;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class JoueurController extends Controller
      */
     public function index()
     {
-        return view("bakcoffice.joueur.all");
+        $continents = Continent::all()->random(4);
+        return view("bakcoffice.joueur.all", compact($continents));
     }
 
     /**

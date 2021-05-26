@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\JoueurController;
+use App\Models\Continent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $continents = Continent::all()->random(4);
+    return view('welcome', compact("$continents"));
 });
 
 // Equipes

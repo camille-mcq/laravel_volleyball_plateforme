@@ -3,7 +3,7 @@
       <a class="nav-link active home" aria-current="page" href="#">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Equies Complètes</a>
+      <a class="nav-link" href="#">Equipes complètes</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Equipes incomplètes</a>

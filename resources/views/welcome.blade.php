@@ -5,6 +5,9 @@
         @include('partials.nav')
         <section class="main">
             <h1 class="text-center">Welcome To The Volleyball Platform</h1>
+            @foreach ($continents as $continent)
+                <p>{{ $continent->nom }}</p>
+            @endforeach
         </section>
     </section>
 @endsection
