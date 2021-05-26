@@ -11,4 +11,9 @@ class Continent extends Model
     protected $table = "continents";
 
     protected $fillable = ["nom"];
+
+    public function equipes()
+    {
+        return $this->hasMany(Equipe::class);
+    }
 }

@@ -11,4 +11,9 @@ class Role extends Model
     protected $table = "roles";
 
     protected $fillable = ["nom"];
+
+    public function joueurs()
+    {
+        return $this->hasMany(Joueur::class);
+    }
 }
