@@ -16,25 +16,19 @@ class ContinentSeeder extends Seeder
     {
         //
         DB::table("continents")->insert([
-                "nom"=>"France"    
+                "nom"=>"Amérique du Nord"    
             ]);
         DB::table("continents")->insert([
-                "nom"=>"Belgique"    
+                "nom"=>"Amérique du Sud"    
             ]);
         DB::table("continents")->insert([
-                "nom"=>"Allemagne"    
+                "nom"=>"Europe"    
             ]);
         DB::table("continents")->insert([
-                "nom"=>"Italie"    
+                "nom"=>"Asie"    
             ]);
         DB::table("continents")->insert([
-                "nom"=>"Espagne"    
-            ]);
-        DB::table("continents")->insert([
-                "nom"=>"USA"    
-            ]);
-        DB::table("continents")->insert([
-                "nom"=>"Angleterre"    
+                "nom"=>"Océanie"    
             ]);
     }
 }
