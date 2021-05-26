@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Continent;
 use App\Models\Joueur;
+use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class JoueurController extends Controller
 {
@@ -39,15 +41,22 @@ class JoueurController extends Controller
     {
         $joueur = new Joueur();
 
+        
+        
         $joueur->nom = $request->nom;
         $joueur->prenom = $request->prenom;
         $joueur->numero = $request->numero;
         $joueur->pays = $request->pays;
-        $joueur->photo_id = $request->photo_id;
         $joueur->role_id = $request->role_id;
         $joueur->equipe_id = $request->equipe_id;
-
+        
         $joueur->save();
+        
+        $photo = new Photo();
+        $photo->nom = $request->file('photo');
+        $photo->joueur_id = $joueur->id;
+        $photo->save();
+        $request->file('photo')->storePublicly('img', 'public');
 
         return redirect()->route("joueurs.index");
     }
@@ -87,11 +96,17 @@ class JoueurController extends Controller
         $joueur->prenom = $request->prenom;
         $joueur->numero = $request->numero;
         $joueur->pays = $request->pays;
-        $joueur->photo_id = $request->photo_id;
         $joueur->role_id = $request->role_id;
         $joueur->equipe_id = $request->equipe_id;
-
+        $photos = Photo::all();
+        Storage::disk('public')->delete("img/" . $joueur->photo->nom);
         $joueur->save();
+
+        $photo = new Photo();
+        $photo->nom = $request->file('photo');
+        $photo->joueur_id = $joueur->id;
+        $photo->save();
+        $request->file('photo')->storePublicly('img', 'public');
 
         return redirect()->route("joueurs.index");
     }
@@ -104,7 +119,9 @@ class JoueurController extends Controller
      */
     public function destroy(Joueur $joueur)
     {
+        Storage::disk("public")->delete("img/" . $joueur->photo->nom);
         $joueur->delete();
+        
         return redirect()->back(); 
     }
 }
