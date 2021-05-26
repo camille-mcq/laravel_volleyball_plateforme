@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $continents = Continent::all()->random(4);
-    return view('welcome', compact("$continents"));
+    //$continents = Continent::all()->random(4);
+    return view('welcome');
 });
 
 // Equipes

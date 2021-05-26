@@ -15,8 +15,8 @@ class JoueurController extends Controller
      */
     public function index()
     {
-        $continents = Continent::all()->random(4);
-        return view("bakcoffice.joueur.all", compact($continents));
+        $joueurs = Joueur::all();
+        return view("backoffice.joueur.all", compact("joueurs"));
     }
 
     /**
