@@ -22,7 +22,7 @@ class EquipeSeeder extends Seeder
             "pays"=>"USA",
             "max"=>12,
             "role_id"=>1,
-            "continent_id"=>2,
+            "continent_id"=>1,
         ]);
         DB::table("equipes")->insert([
             "nom"=>"Lions",
@@ -30,24 +30,24 @@ class EquipeSeeder extends Seeder
             "pays"=>"france",
             "max"=>23,
             "role_id"=>3,
-            "continent_id"=>2,
+            "continent_id"=>3,
         ]);
         
         DB::table("equipes")->insert([
             "nom"=>"Griffondor",
-            "ville"=> "Berlin",
-            "pays"=>"allemagne",
+            "ville"=> "Pekin",
+            "pays"=>"Chine",
             "max"=>34,
             "role_id"=>2,
-            "continent_id"=>3,
+            "continent_id"=>4,
         ]);
         DB::table("equipes")->insert([
             "nom"=>"Serpentar",
-            "ville"=> "Madrid",
-            "pays"=>"Espagne",
+            "ville"=> "Rio",
+            "pays"=>"Brazil",
             "max"=>13,
             "role_id"=>3,
-            "continent_id"=>4,
+            "continent_id"=>2,
         ]);
         
         
