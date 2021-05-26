@@ -18,7 +18,8 @@ class CreateEquipesTable extends Migration
             $table->string("nom", 255);
             $table->string("ville", 255);
             $table->string("pays", 255);
-            $table->string("max",11);
+            $table->string("max");
+            $table->foreignId("role_id")->constrained("roles");
             $table->foreignId("continent_id")->constrained("continents");
             $table->timestamps();
         });

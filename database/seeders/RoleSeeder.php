@@ -29,7 +29,7 @@ class RoleSeeder extends Seeder
         );
         DB::table("roles")->insert(
             [
-                "nom"=>"avant",
+                "nom"=>"central",
                 
             ]
         );

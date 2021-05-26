@@ -17,25 +17,31 @@ class PhotoSeeder extends Seeder
         //
 
         DB::table("photos")->insert([
-            "nom"=>"angleterre.jpeg"    
+            "nom"=>"angleterre.jpeg",
+            "joueur_id"=>2,    
         ]);
         DB::table("photos")->insert([
-            "nom"=>"allemagne.jpeg"    
+            "nom"=>"allemagne.jpeg",
+            "joueur_id"=>1,    
         ]);
         DB::table("photos")->insert([
-            "nom"=>"belgique.jpeg"    
+            "nom"=>"belgique.jpeg",
+            "joueur_id"=>3,    
         ]);
         DB::table("photos")->insert([
-            "nom"=>"espagne.jpeg"    
+            "nom"=>"espagne.jpeg",
+            "joueur_id"=>4,    
         ]);
         DB::table("photos")->insert([
-            "nom"=>"france.jpeg"    
+            "nom"=>"france.jpeg",
+            "joueur_id"=>2,    
         ]);
         DB::table("photos")->insert([
             "nom"=>"italie.jpeg"    
         ]);
         DB::table("photos")->insert([
-            "nom"=>"portugal.jpeg"    
+            "nom"=>"portugal.jpeg",   
+            "joueur_id"=>4, 
         ]);
     }
 }
