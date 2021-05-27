@@ -39,4 +39,9 @@ class Joueur extends Model
         return $this->belongsTo(Genre::class);
     }
 
+    public function photo()
+    {
+        return $this->hasOne(Photo::class);
+    }
+
 }

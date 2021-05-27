@@ -16,34 +16,33 @@ class JoueurSeeder extends Seeder
     {
         //
         DB::table("joueurs")->insert([
-            "nom"=>"Merkel",
-            "prenom"=> "Angela",
+            "nom"=>"II",
+            "prenom"=> "Elizabeth",
             "age"=>34,
             "telephone"=>"0456769504",
-            "mail"=>"halo@germany.de",
-            "pays"=>"allemagne",
+            "mail"=>"elizabeth@mail.com",
+            "pays"=>"angleterre",
             "genre_id"=>1,
             "role_id"=>2,
             "equipe_id"=>1
-            
         ]);
         DB::table("joueurs")->insert([
-            "nom"=>"Macron",
-            "prenom"=> "Manu",
+            "nom"=>"Merkel",
+            "prenom"=> "Angela",
             "age"=>34,
             "telephone"=>"0689553423",
-            "mail"=>"bonjour@france.fr",
-            "pays"=>"france",
+            "mail"=>"merkel@mail.com",
+            "pays"=>"allemagne",
             "genre_id"=>2,
             "role_id"=>4,
             "equipe_id"=>2,            
         ]);
         DB::table("joueurs")->insert([
-            "nom"=>"Philippe",
-            "prenom"=> "Roi",
+            "nom"=>"Roi",
+            "prenom"=> "Philippe",
             "age"=>34,
             "telephone"=>"0475235465",
-            "mail"=>"salut@belgique.be",
+            "mail"=>"roi@belgique.be",
             "pays"=>"belgique",
             "genre_id"=>2,
             "role_id"=>1,
@@ -51,23 +50,56 @@ class JoueurSeeder extends Seeder
             
         ]);
         DB::table("joueurs")->insert([
-            "nom"=>"Obama",
-            "prenom"=> "Barak",
+            "nom"=>"Fz",
+            "prenom"=> "Elias",
             "age"=>23,
             "telephone"=>"045634512",
-            "mail"=>"hey@usa.usa",
-            "pays"=>"USA",
+            "mail"=>"fz@mail.com",
+            "pays"=>"espagne",
             "genre_id"=>2,
             "role_id"=>1,
             "equipe_id"=>1
         ]);
         DB::table("joueurs")->insert([
-            "nom"=>"Fz",
-            "prenom"=> "Elias",
+            "nom"=>"Macron",
+            "prenom"=> "Emmanuel",
+            "age"=>27,
+            "telephone"=>"0456456597",
+            "mail"=>"emmanuel@mail.com",
+            "pays"=>"france",
+            "genre_id"=>2,
+            "role_id"=>3,
+            "equipe_id"=>3,
+        ]);
+        DB::table("joueurs")->insert([
+            "nom"=>"Matarella",
+            "prenom"=> "Sergio",
             "age"=>27,
             "telephone"=>"0456234597",
-            "mail"=>"zerma@yoyo.mlgk",
-            "pays"=>"belgique",
+            "mail"=>"matarella@mail.com",
+            "pays"=>"italie",
+            "genre_id"=>2,
+            "role_id"=>3,
+            "equipe_id"=>3,
+        ]);
+        DB::table("joueurs")->insert([
+            "nom"=>"Rebelo de Sousa",
+            "prenom"=> "Marcelo",
+            "age"=>27,
+            "telephone"=>"0456234597",
+            "mail"=>"rebelo@mail.com",
+            "pays"=>"portugal",
+            "genre_id"=>2,
+            "role_id"=>3,
+            "equipe_id"=>3,
+        ]);
+        DB::table("joueurs")->insert([
+            "nom"=>"Jong-un",
+            "prenom"=> "Kim",
+            "age"=>27,
+            "telephone"=>"0456234597",
+            "mail"=>"kim@mail.com",
+            "pays"=>"corée",
             "genre_id"=>2,
             "role_id"=>3,
             "equipe_id"=>3,

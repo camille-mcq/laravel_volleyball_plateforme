@@ -6,9 +6,11 @@ use App\Models\Continent;
 use App\Models\Equipe;
 use App\Models\Genre;
 use App\Models\Joueur;
+use App\Models\Photo;
 use App\Models\Role;
 use Database\Seeders\RoleSeeder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class JoueurController extends Controller
 {
@@ -47,6 +49,8 @@ class JoueurController extends Controller
     {
         $joueur = new Joueur();
 
+        
+        
         $joueur->nom = $request->nom;
         $joueur->prenom = $request->prenom;
         $joueur->age = $request->age;
@@ -56,8 +60,14 @@ class JoueurController extends Controller
         $joueur->pays = $request->pays;
         $joueur->role_id = $request->role_id;
         $joueur->equipe_id = $request->equipe_id;
-
+        
         $joueur->save();
+        
+        $photo = new Photo();
+        $photo->nom = $request->file('photo');
+        $photo->joueur_id = $joueur->id;
+        $photo->save();
+        $request->file('photo')->storePublicly('img', 'public');
 
         return redirect()->route("joueurs.index");
     }
@@ -110,8 +120,15 @@ class JoueurController extends Controller
         $joueur->pays = $request->pays;
         $joueur->role_id = $request->role_id;
         $joueur->equipe_id = $request->equipe_id;
-
+        $photos = Photo::all();
+        Storage::disk('public')->delete("img/" . $joueur->photo->nom);
         $joueur->save();
+
+        $photo = new Photo();
+        $photo->nom = $request->file('photo');
+        $photo->joueur_id = $joueur->id;
+        $photo->save();
+        $request->file('photo')->storePublicly('img', 'public');
 
         return redirect()->route("joueurs.index");
     }
@@ -124,7 +141,9 @@ class JoueurController extends Controller
      */
     public function destroy(Joueur $joueur)
     {
+        Storage::disk("public")->delete("img/" . $joueur->photo->nom);
         $joueur->delete();
+        
         return redirect()->back(); 
     }
 }

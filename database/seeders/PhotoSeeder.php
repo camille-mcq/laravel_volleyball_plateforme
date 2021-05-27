@@ -18,11 +18,11 @@ class PhotoSeeder extends Seeder
 
         DB::table("photos")->insert([
             "nom"=>"angleterre.jpeg",
-            "joueur_id"=>2,    
+            "joueur_id"=>1,    
         ]);
         DB::table("photos")->insert([
             "nom"=>"allemagne.jpeg",
-            "joueur_id"=>1,    
+            "joueur_id"=>2,    
         ]);
         DB::table("photos")->insert([
             "nom"=>"belgique.jpeg",
@@ -34,15 +34,19 @@ class PhotoSeeder extends Seeder
         ]);
         DB::table("photos")->insert([
             "nom"=>"france.jpeg",
-            "joueur_id"=>2,    
+            "joueur_id"=>5,    
         ]);
         DB::table("photos")->insert([
             "nom"=>"italie.jpeg" ,
-            "joueur_id" => 1   
+            "joueur_id" => 6   
         ]);
         DB::table("photos")->insert([
             "nom"=>"portugal.jpeg",   
-            "joueur_id"=>4, 
+            "joueur_id"=>7, 
+        ]);
+        DB::table("photos")->insert([
+            "nom"=>"coree.jpg",   
+            "joueur_id"=>8, 
         ]);
     }
 }
