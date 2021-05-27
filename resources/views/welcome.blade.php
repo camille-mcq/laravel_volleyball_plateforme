@@ -71,6 +71,7 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Photo</th>
                             <th scope="col">Nom</th>
                             <th scope="col">Prenom</th>
                             <th scope="col">Age</th>
@@ -85,6 +86,7 @@
                             @if ($joueur->equipe_id <= 1 && $key <= 4)
                                 <tr>
                                     <td>{{ $joueur->id }}</td>
+                                    <td><img src="{{ asset("img/" . $joueur->photo->nom) }}" alt="" width="50"></td>
                                     <td>{{ $joueur->nom }}</td>
                                     <td>{{ $joueur->prenom }}</td>
                                     <td>{{ $joueur->age }}</td>
@@ -105,6 +107,7 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Photo</th>
                             <th scope="col">Nom</th>
                             <th scope="col">Prenom</th>
                             <th scope="col">Age</th>
@@ -121,6 +124,7 @@
                             @if ($joueur->equipe_id > 1 && $key <= 4)
                                 <tr>
                                     <td>{{ $joueur->id }}</td>
+                                    <td><img src="{{ asset("img/" . $joueur->photo->nom) }}" alt="" width="50"></td>
                                     <td>{{ $joueur->nom }}</td>
                                     <td>{{ $joueur->prenom }}</td>
                                     <td>{{ $joueur->age }}</td>
@@ -203,6 +207,7 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Photo</th>
                             <th scope="col">Nom</th>
                             <th scope="col">Prenom</th>
                             <th scope="col">Age</th>
@@ -214,10 +219,15 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {{-- {{ dd($joueurs[0]->genre->nom, $joueurs[0]->photo->nom) }}
+                        @foreach ($joueurs as $joueur)
+                            <p>{{ $joueur->genre->nom }}</p>
+                        @endforeach --}}
                         @foreach ($joueurs as $key => $joueur)
                             @if ($joueur->genre->nom == 'Femme' && $joueur->equipe_id > 1 && $key <= 5)
                                 <tr>
                                     <td>{{ $joueur->id }}</td>
+                                    <td><img src="{{ asset("img/" . $joueur->photo->nom) }}" alt="" width="50"></td>
                                     <td>{{ $joueur->nom }}</td>
                                     <td>{{ $joueur->prenom }}</td>
                                     <td>{{ $joueur->age }}</td>
@@ -225,7 +235,7 @@
                                     <td>{{ $joueur->pays }}</td>
                                     <td>{{ $joueur->genre->nom }}</td>
                                     <td>{{ $joueur->role->nom }}</td>
-                                    <td>{{ $equipes[$joueur->equipe_id - 1]->nom }}</td>
+                                    <td>{{ $joueur->equipe->nom }}</td>
                                 </tr>
                             @endif
                         @endforeach
@@ -238,6 +248,7 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Photo</th>
                             <th scope="col">Nom</th>
                             <th scope="col">Prenom</th>
                             <th scope="col">Age</th>
@@ -253,6 +264,7 @@
                             @if ($joueur->genre->nom == 'Homme' && $joueur->equipe_id > 1 && $key <= 5)
                                 <tr>
                                     <td>{{ $joueur->id }}</td>
+                                    <td><img src="{{ asset("img/" . $joueur->photo->nom) }}" alt="" width="50"></td>
                                     <td>{{ $joueur->nom }}</td>
                                     <td>{{ $joueur->prenom }}</td>
                                     <td>{{ $joueur->age }}</td>
