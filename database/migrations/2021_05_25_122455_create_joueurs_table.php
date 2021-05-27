@@ -19,6 +19,7 @@ class CreateJoueursTable extends Migration
             $table->string("prenom", 255);
             $table->unsignedInteger("age");
             $table->string("telephone");
+            $table->string("mail");
             $table->string("pays");
             $table->foreignId("genre_id")->constrained("genres");
             $table->foreignId("role_id")->constrained("roles");

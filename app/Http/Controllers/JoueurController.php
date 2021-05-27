@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Continent;
+use App\Models\Equipe;
+use App\Models\Genre;
 use App\Models\Joueur;
+use App\Models\Role;
+use Database\Seeders\RoleSeeder;
 use Illuminate\Http\Request;
 
 class JoueurController extends Controller
@@ -15,8 +19,8 @@ class JoueurController extends Controller
      */
     public function index()
     {
-        $continents = Continent::all()->random(4);
-        return view("bakcoffice.joueur.all", compact("continents"));
+        $joueurs = Joueur::all();
+        return view("backoffice.joueur.all", compact("joueurs"));
     }
 
     /**
@@ -26,7 +30,11 @@ class JoueurController extends Controller
      */
     public function create()
     {
-        return view("backoffice.joueur.create");
+        $equipes = Equipe::all();
+        $continents = Continent::all();
+        $roles = Role::all();
+        $genres = Genre::all();
+        return view("backoffice.joueur.create", compact("continents", "equipes", "roles", "genres"));
     }
 
     /**
@@ -41,9 +49,11 @@ class JoueurController extends Controller
 
         $joueur->nom = $request->nom;
         $joueur->prenom = $request->prenom;
-        $joueur->numero = $request->numero;
+        $joueur->age = $request->age;
+        $joueur->telephone = $request->telephone;
+        $joueur->mail = $request->mail;
+        $joueur->genre_id = $request->genre_id;
         $joueur->pays = $request->pays;
-        $joueur->photo_id = $request->photo_id;
         $joueur->role_id = $request->role_id;
         $joueur->equipe_id = $request->equipe_id;
 
@@ -60,7 +70,11 @@ class JoueurController extends Controller
      */
     public function show(Joueur $joueur)
     {
-        return view("backoffice.joueur.show");
+        $equipes = Equipe::all();
+        $continents = Continent::all();
+        $roles = Role::all();
+        $genres = Genre::all();
+        return view("backoffice.joueur.show", compact("equipes", "continents", "roles", "genres", "joueur"));
     }
 
     /**
@@ -71,7 +85,11 @@ class JoueurController extends Controller
      */
     public function edit(Joueur $joueur)
     {
-        return view("backoffice.joueur.edit");
+        $equipes = Equipe::all();
+        $continents = Continent::all();
+        $roles = Role::all();
+        $genres = Genre::all();
+        return view("backoffice.joueur.edit", compact("equipes", "continents", "roles", "genres", "joueur"));
     }
 
     /**
@@ -85,9 +103,11 @@ class JoueurController extends Controller
     {
         $joueur->nom = $request->nom;
         $joueur->prenom = $request->prenom;
-        $joueur->numero = $request->numero;
+        $joueur->age = $request->age;
+        $joueur->telephone = $request->telephone;
+        $joueur->mail = $request->mail;
+        $joueur->genre_id = $request->genre_id;
         $joueur->pays = $request->pays;
-        $joueur->photo_id = $request->photo_id;
         $joueur->role_id = $request->role_id;
         $joueur->equipe_id = $request->equipe_id;
 
