@@ -51,6 +51,20 @@ class EquipeSeeder extends Seeder
             "max"=>13,
             "continent_id"=>3,
         ]);
+        DB::table("equipes")->insert([
+            "nom"=>"Serdaigle",
+            "ville"=> "Brasilia",
+            "pays"=>"Brazil",
+            "max"=>15,
+            "continent_id"=>3,
+        ]);
+        DB::table("equipes")->insert([
+            "nom"=>"Pouffsouffle",
+            "ville"=> "Sao Paulo",
+            "pays"=>"Brazil",
+            "max"=>16,
+            "continent_id"=>3,
+        ]);
         
         
     }

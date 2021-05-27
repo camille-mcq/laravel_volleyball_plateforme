@@ -72,5 +72,27 @@ class JoueurSeeder extends Seeder
             "role_id"=>3,
             "equipe_id"=>3,
         ]);
+        DB::table("joueurs")->insert([
+            "nom"=>"Lala",
+            "prenom"=> "Laurie",
+            "age"=>23,
+            "telephone"=>"0456234459",
+            "mail"=>"lalalaurie@yoyo.mlgk",
+            "pays"=>"belgique",
+            "genre_id"=>1,
+            "role_id"=>1,
+            "equipe_id"=>3,
+        ]);
+        DB::table("joueurs")->insert([
+            "nom"=>"CamCam",
+            "prenom"=> "Camille",
+            "age"=>24,
+            "telephone"=>"0456234450",
+            "mail"=>"camcamcamille@yoyo.mlgk",
+            "pays"=>"belgique",
+            "genre_id"=>1,
+            "role_id"=>1,
+            "equipe_id"=>3,
+        ]);
     }
 }
