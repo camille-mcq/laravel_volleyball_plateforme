@@ -1,32 +1,47 @@
+
+{{--  --}}
+
 @extends('layouts.app')
 
 @section('content')
-    <section class="d-flex welcome">
-        @include('partials.nav2')
-        <h2>Modifier une équipe</h2>
-        <section class="main center">
-            <form action={{ route('equipes.update', $equipe->id) }} method="post" enctype="multipart/form-data">
+<section class="d-flex justify-content-evenly">
+    @include('partials.nav')
+    <section>
+        <div class="container">
+        <h1 class="text-center my-5">Modifier une équipe</h1>
+        <a href="{{route('equipes.index')}}" class="text-decoration-none text-primary fs-6 pb-2 d-block"> < Retour </a>
+            <form action="/equipes/{{$equipe->id }}" method="post" enctype="multipart/form-data">
                 @csrf
-                @method("put")
+                @method('put')
                 <div class="mb-3">
-                    <label class="form-label" >Nom</label>
-                    <input type="text" class="form-control" name="nom" value={{ $equipe->nom }}>
-               </div>
-               <div class="mb-3">
-                   <label class="form-label">Ville</label>
-                   <input type="text" class="form-control" name="ville" value="{{ $equipe->ville }}">
-               </div>
-               <div class="mb-3">
-                   <label class="form-label">Nombre de joueurs max</label>
-                   <input type="text" class="form-control" name="max" value="{{ $equipe->max }}">
-               </div>
-               <div class="mb-3">
-                    <label class="form-label">Continent</label>
-                    <input type="text" class="form-control" name="continent_id" value="{{ $equipe->continent }}">
+                     <label class="form-label">Nom</label>
+                     <input type="text" class="form-control" name="nom" value={{ $equipe->nom }}>
                 </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="mb-3">
+                    <label class="form-label">Ville</label>
+                    <input type="text" class="form-control" name="ville" value={{ $equipe->ville }}>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Pays</label>
+                    <input type="text" class="form-control" name="pays" value={{ $equipe->pays }}>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Nombre de joueurs max</label>
+                    <input type="text" class="form-control" name="max" value={{ $equipe->max }}>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Continent</label>
+                    <select name="continent_id" id="">
+                        @foreach($continents as $continent)
+                        <option value="{{ $continent->id }}">{{ $continent->nom }}</option>
+                        @endforeach
+                    </select>
+                
+                </div>
+                <button type="submit" class="btn btn-primary text-white">Modifier</button>
             </form>
-        </section>
+        </div></section>
+        
     </section>
 @endsection
 
