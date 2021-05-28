@@ -48,5 +48,13 @@ class PhotoSeeder extends Seeder
             "nom"=>"coree.jpg",   
             "joueur_id"=>8, 
         ]);
+        DB::table("photos")->insert([
+            "nom"=>"lane.jpg",   
+            "joueur_id"=>9, 
+        ]);
+        DB::table("photos")->insert([
+            "nom"=>"bob.jpg",   
+            "joueur_id"=>10, 
+        ]);
     }
 }

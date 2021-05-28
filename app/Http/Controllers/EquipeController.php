@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Continent;
 use App\Models\Equipe;
+use App\Models\Joueur;
 use Illuminate\Http\Request;
 
 class EquipeController extends Controller
@@ -110,6 +111,12 @@ class EquipeController extends Controller
      */
     public function destroy(Equipe $equipe)
     {
+        
+        foreach($equipe->joueurs as $joueur){
+            $joueur->equipe = Equipe::where("nom", "sans equipe");
+            $joueur->save(); 
+        }
+        
         $equipe->delete();
         return redirect()->back();
     }

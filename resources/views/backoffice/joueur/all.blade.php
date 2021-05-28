@@ -24,12 +24,16 @@
                                 <td>
                                     <a class="btn text-white mx-1 btn-secondary" href="{{ route("joueurs.show", $joueur->id) }}">Show</a>
                                     <a class="btn text-white mx-1 btn-primary" href="{{ route("joueurs.edit", $joueur->id) }}">Edit</a>
+                                    <form action={{ route("joueurs.destroy", $joueur->id) }} method="post">
+                                        @csrf
+                                        @method("delete")
+                                        <button class="btn text-white mx-1 btn-danger" type="submit">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             </section>
-        
     </section>
 @endsection

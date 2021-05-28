@@ -49,8 +49,6 @@ class JoueurController extends Controller
     {
         $joueur = new Joueur();
 
-        
-        
         $joueur->nom = $request->nom;
         $joueur->prenom = $request->prenom;
         $joueur->age = $request->age;
@@ -143,7 +141,7 @@ class JoueurController extends Controller
     {
         Storage::disk("public")->delete("img/" . $joueur->photo->nom);
         $joueur->delete();
-        
+    
         return redirect()->back(); 
     }
 }
